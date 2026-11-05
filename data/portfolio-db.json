@@ -1,0 +1,458 @@
+{
+  "profile": {
+    "name": "Dzaky Rayssa Buntoro",
+    "role": "AI Engineer & Sales Operations Analyst",
+    "headline": "Building explainable AI systems, NLP pipelines, and data-driven revenue operations.",
+    "bio": "Informatics Engineering graduate from Universitas Muhammadiyah Surakarta specializing in Natural Language Processing (NLP), AI automation, and business strategy. Sales Operations Analyst at 99 Group (Rumah123.com) and Founder of Skillsy (Alibaba Cloud AI Catalyst Program Cohort & Top 480 Bank Indonesia Hackathon).",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
+    "statusBadge": "Alibaba Cloud AI Catalyst | 99 Group (Rumah123)",
+    "location": "South Jakarta, Indonesia",
+    "email": "DzakyRayssa7@gmail.com",
+    "github": "https://github.com/dzakybuntoro",
+    "linkedin": "https://linkedin.com/in/dzakybuntoro",
+    "twitter": "https://x.com/dzakybuntoro",
+    "instagram": "https://instagram.com/dzakybuntoro",
+    "resumeUrl": "#",
+    "stats": [
+      {
+        "label": "Analysis Errors Cut",
+        "value": "~80%"
+      },
+      {
+        "label": "Lead Records Clustered",
+        "value": "8,000+"
+      },
+      {
+        "label": "Hackathon Rank",
+        "value": "Top 480"
+      },
+      {
+        "label": "Review Time Slashed",
+        "value": ">90%"
+      }
+    ],
+    "featuredTech": [
+      {
+        "name": "Python",
+        "category": "Language"
+      },
+      {
+        "name": "Indo-RoBERTa (NLP)",
+        "category": "AI & NLP"
+      },
+      {
+        "name": "LangChain & RAG",
+        "category": "AI Architecture"
+      },
+      {
+        "name": "FastAPI & Streamlit",
+        "category": "Backend"
+      },
+      {
+        "name": "Alibaba Cloud & GCP",
+        "category": "Cloud"
+      },
+      {
+        "name": "SQL & PostgreSQL",
+        "category": "Database"
+      },
+      {
+        "name": "Selenium & Scraping",
+        "category": "Data Pipeline"
+      },
+      {
+        "name": "Looker & Power BI",
+        "category": "Analytics"
+      },
+      {
+        "name": "RevOps & P&L Modeling",
+        "category": "Strategy"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-skillsy",
+      "slug": "skillsy-ai-career-analytics",
+      "title": "Skillsy (skillsy.my.id) - Explainable AI Career & Skill Diagnostics",
+      "summary": "Founder & Lead Developer. Selected into the Alibaba Cloud AI Catalyst Program with dedicated compute infrastructure. Built an explainable, transparent non-blackbox skill scoring engine.",
+      "content": "# Skillsy - Explainable AI Career Analytics & Skill Diagnostics Platform\n\n**Founder & Lead Developer (Alibaba Cloud AI Catalyst Program Cohort)**\n\n## Overview\nSkillsy (accessible at `skillsy.my.id`) addresses the lack of transparency in automated career assessment and recruitment matching. Rather than relying on opaque 'black-box' scoring, Skillsy utilizes a structured knowledge base and weighted evaluation algorithms.\n\n## Program Achievements\n- **Alibaba Cloud AI Catalyst Program**: Selected for cohort acceptance, securing dedicated AI/cloud compute credits and specialized architectural consultation from Alibaba Cloud engineers.\n- **Bank Indonesia Hackathon (Top 480)**: Advanced the initial prototype into an active AI-driven career analytics startup platform.\n\n## Architecture & Tech Stack\n- **Explainable Scoring Engine**: Designed rule-assisted knowledge-base scoring algorithms that output direct, interpretable skill diagnostic feedback.\n- **Web Deployment & Cloud**: Scalable inference endpoints deployed on Alibaba Cloud with Python, FastAPI, and responsive front-end interfaces.",
+      "category": "AI & Startup",
+      "tags": [
+        "Python",
+        "FastAPI",
+        "Explainable AI",
+        "Alibaba Cloud",
+        "Knowledge Base"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "https://skillsy.my.id",
+      "githubUrl": "https://github.com/dzakybuntoro/skillsy",
+      "featured": true,
+      "client": "Skillsy Venture",
+      "year": "2026",
+      "stats": [
+        {
+          "label": "Program",
+          "value": "Alibaba Cloud AI"
+        },
+        {
+          "label": "Hackathon",
+          "value": "Top 480 BI"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-mortgage-hub",
+      "slug": "mortgage-intelligence-hub",
+      "title": "Mortgage Intelligence Hub - 99 Group (Rumah123.com)",
+      "summary": "Consolidated 30+ fragmented spreadsheets into a centralized RevOps executive dashboard, diagnosing Q3 pipeline bottlenecks and cutting analysis errors by ~80%.",
+      "content": "# Mortgage Intelligence Hub - Enterprise Operations Architecture\n\n**Sales Operations Analyst at 99 Group (Rumah123.com)**\n\n## Challenge\nMortgage sales and operations pipelines were fragmented across 30+ disjointed Google Sheets, banking portals, and CRM telephony records, causing manual cross-referencing delays and reconciliation errors.\n\n## Impact & Engineered Solutions\n- **Single Source of Truth**: Architected the centralized RevOps executive dashboard giving management a helicopter view of multi-channel attribution and pipeline performance.\n- **Operational Auditing & Accuracy**: Slashed manual cross-referencing cycles and analysis errors by **~80%** with automated data validation pipelines.\n- **AI-Driven Lead Quality Audit**: Clustered 8,000+ lead interaction records using NLP to uncover operational SOP deviations and conversion bottlenecks.\n- **Harpropnas Internal Tools**: Built internal web calculators and interactive operational tools for mortgage workflows used directly during major company campaigns.",
+      "category": "Data & RevOps",
+      "tags": [
+        "Python",
+        "RevOps",
+        "CRM Architecture",
+        "NLP Clustering",
+        "Looker Studio"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "https://rumah123.com",
+      "githubUrl": "",
+      "featured": true,
+      "client": "99 Group / Rumah123",
+      "year": "2026",
+      "stats": [
+        {
+          "label": "Error Reduction",
+          "value": "~80%"
+        },
+        {
+          "label": "Leads Audited",
+          "value": "8,000+"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-sigap",
+      "slug": "sigap-bank-indonesia-hackathon",
+      "title": "SIGAP Platform - Labor Market Skill-Gap Analysis",
+      "summary": "Team Lead & Product Strategist for Top 480 Hackathon Bank Indonesia 2026. Designed end-to-end skill-gap analytics connecting industry demand with personalized learning paths.",
+      "content": "# SIGAP Platform - Bank Indonesia Hackathon 2026\n\n**Top 480 Semifinalist | Team Lead & Product Strategist**\n\n## Overview\nSIGAP connects Indonesian labor market requirements with individual higher-education curricula and personalized upskilling pathways.\n\n## Key Deliverables\n- Led cross-functional team across research, data pipeline design, and interactive UI prototyping.\n- Built labor-market skill taxonomy mapping real-time job vacancy demands against university syllabi.\n- Implemented Python and cloud database integrations for instantaneous candidate gap scoring.",
+      "category": "Product & AI",
+      "tags": [
+        "Python",
+        "Product Strategy",
+        "Market Taxonomy",
+        "Cloud DB",
+        "Streamlit"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/dzakybuntoro/sigap-bi",
+      "featured": true,
+      "client": "Bank Indonesia Hackathon",
+      "year": "2026",
+      "stats": [
+        {
+          "label": "Hackathon Rank",
+          "value": "Top 480"
+        },
+        {
+          "label": "Role",
+          "value": "Team Lead"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-absa-nlp",
+      "slug": "aspect-based-sentiment-analysis",
+      "title": "Aspect-Based Sentiment Analysis (ABSA) with Indo-RoBERTa",
+      "summary": "Implemented fine-tuned Indo-RoBERTa and T5 models to extract fine-grained business aspects and classify multi-class customer sentiment from unstructured reviews.",
+      "content": "# Aspect-Based Sentiment Analysis (ABSA) for Indonesian Customer Feedback\n\n**Lead Researcher & Developer (Final Academic Project)**\n\n## Technical Implementation\n- Fine-tuned transformer models (`Indo-RoBERTa` and `T5`) to perform aspect extraction and multi-class sentiment polarity classification.\n- Built automated web scraping pipelines using Selenium and BeautifulSoup to gather and curate raw consumer feedback.\n- Slashed manual review analysis time by **>90%** with high contextual accuracy.",
+      "category": "AI & NLP",
+      "tags": [
+        "Indo-RoBERTa",
+        "T5 Transformer",
+        "PyTorch",
+        "Selenium",
+        "NLP"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/dzakybuntoro/indonesian-absa",
+      "featured": true,
+      "client": "Research Project",
+      "year": "2026",
+      "stats": [
+        {
+          "label": "Time Slashed",
+          "value": ">90%"
+        },
+        {
+          "label": "Model",
+          "value": "Indo-RoBERTa"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-gmaps-intelligence",
+      "slug": "google-maps-review-intelligence",
+      "title": "Google Maps Review Intelligence - SIML Conference",
+      "summary": "Automated data harvesting and aspect-level NLP sentiment pipeline across 100+ business profiles published at SIML Conference.",
+      "content": "# Google Maps Review Intelligence\n\n**Published Researcher, SIML Conference 2025-2026**\n\n## Overview\nAutomated end-to-end scraping and sentiment analytics pipeline processing consumer reviews across 100+ business locations.\n\n## Highlights\n- Integrated Selenium headless scrapers with Streamlit analytical dashboards.\n- Enabled local businesses to track aspect-level service quality metrics in real-time.",
+      "category": "Research & AI",
+      "tags": [
+        "Selenium",
+        "Streamlit",
+        "NLP",
+        "Data Scraping",
+        "Python"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/dzakybuntoro/gmaps-intelligence",
+      "featured": true,
+      "client": "SIML Conference",
+      "year": "2025",
+      "stats": [
+        {
+          "label": "Profiles Analyzed",
+          "value": "100+"
+        },
+        {
+          "label": "Automation",
+          "value": "100% End-to-End"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-macroeconomic-shifts",
+      "slug": "macroeconomic-market-shift-analysis",
+      "title": "Macroeconomic Market Factor Shifts on Tech Equities (Sinta 4)",
+      "summary": "Peer-reviewed publication evaluating the impact of macroeconomic variables (Fed interest rate changes) on technology sector equity behavior.",
+      "content": "# Macroeconomic Market Factor Shifts on Tech Equities\n\n**Researcher, Sinta 4 Journal Publication**\n\n## Research Scope\nEvaluated how shifts in central bank interest rates impact equity valuations in the technology sector across pre- and post-pandemic market regimes.\n\n## Methodology\n- Quantitative econometric modeling using Python and pandas.\n- Statistical hypothesis testing and time-series correlation analysis.",
+      "category": "Quantitative Analytics",
+      "tags": [
+        "Python",
+        "Econometrics",
+        "Pandas",
+        "Sinta 4 Journal",
+        "Data Science"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "https://github.com/dzakybuntoro/macroeconomic-tech-equities",
+      "featured": true,
+      "client": "Sinta 4 Journal",
+      "year": "2025",
+      "stats": [
+        {
+          "label": "Publication",
+          "value": "Sinta 4"
+        },
+        {
+          "label": "Analysis",
+          "value": "Time-Series Regression"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-telephony-automation",
+      "slug": "revops-telephony-pipeline-automation",
+      "title": "RevOps & Telephony Pipeline Automation (3CX & CRM)",
+      "summary": "Integrated 3CX telephony logs with enterprise CRM lead tracking, building custom Google Apps Script and Python automations that eliminated repetitive manual tasks.",
+      "content": "# RevOps & Telephony Pipeline Automation\n\n**99 Group (Rumah123.com)**\n\n## Key Deliverables\n- Integrated VoIP / Telephony logs (3CX) with CRM lead records for automated call tagging and SLA tracking.\n- Developed Google Apps Script triggers and automated data verification scripts.",
+      "category": "Operations Engineering",
+      "tags": [
+        "3CX",
+        "CRM Architecture",
+        "Google Apps Script",
+        "Automation",
+        "RevOps"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "",
+      "featured": true,
+      "client": "99 Group",
+      "year": "2026",
+      "stats": [
+        {
+          "label": "Telephony",
+          "value": "3CX Integration"
+        },
+        {
+          "label": "SOP Compliance",
+          "value": "100% Tracked"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    },
+    {
+      "id": "proj-maha-offset",
+      "slug": "maha-offset-expansion-dashboard",
+      "title": "Maha Offset - Reseller Territory Market Research & BI Studio",
+      "summary": "Built business intelligence visualization dashboards to map reseller expansion territories and evaluate regional market potential.",
+      "content": "# Maha Offset - Reseller Expansion & Market Research Dashboard\n\n**Data & Market Research Intern**\n\n## Achievements\n- Conducted market research and competitor benchmarking across regional printing sectors.\n- Built interactive geospatial and sales visualization dashboards supporting executive territory expansion.",
+      "category": "Market Intelligence",
+      "tags": [
+        "Looker Studio",
+        "Market Research",
+        "Business Analytics",
+        "BI Dashboards"
+      ],
+      "coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "demoUrl": "#",
+      "githubUrl": "",
+      "featured": true,
+      "client": "Percetakan Maha Offset",
+      "year": "2025",
+      "stats": [
+        {
+          "label": "Expansion Strategy",
+          "value": "Data-Driven"
+        },
+        {
+          "label": "Dashboards",
+          "value": "Looker Studio"
+        }
+      ],
+      "createdAt": "2026-11-01T23:26:35.000Z",
+      "updatedAt": "2026-11-01T23:26:35.000Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-1",
+      "slug": "explainable-ai-career-diagnostics",
+      "title": "Why Explainable AI Beats Black-Box Scoring in Career & Skill Diagnostics",
+      "excerpt": "Lessons learned from building Skillsy under the Alibaba Cloud AI Catalyst Program: structured knowledge bases versus opaque embeddings.",
+      "content": "# Why Explainable AI Beats Black-Box Scoring in Career & Skill Diagnostics\n\nWhen we founded **Skillsy**, we realized the biggest pitfall in automated HR and recruitment tech: candidate distrust in opaque AI scores.\n\n## The Black-Box Problem\nCandidates who receive a score of '72%' with no breakdown have no actionable path forward.\n\n## Our Solution at Skillsy\nBy combining weighted structured knowledge bases with transparent LLM validation, we provide deterministic, actionable gap feedback.\n\n```python\ndef calculate_skill_alignment(candidate_nodes, benchmark_nodes):\n    return weighted_graph_score(candidate_nodes, benchmark_nodes)\n```",
+      "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "tags": [
+        "AI Architecture",
+        "Skillsy",
+        "NLP",
+        "Machine Learning"
+      ],
+      "category": "AI Architecture",
+      "readTime": "5 min read",
+      "published": true,
+      "claps": 194,
+      "createdAt": "2026-11-03T10:00:00.000Z",
+      "updatedAt": "2026-11-03T10:00:00.000Z"
+    },
+    {
+      "id": "art-2",
+      "slug": "revops-pipeline-optimization",
+      "title": "How We Slashed Operational Analysis Errors by 80% at 99 Group",
+      "excerpt": "Consolidating 30+ fragmented spreadsheets into an automated Single Source of Truth for mortgage and sales operations.",
+      "content": "# How We Slashed Operational Analysis Errors by 80% at 99 Group\n\nManaging multi-channel attribution and lead tracking across banking partners is fraught with manual reconciliation errors.\n\n## The Architecture of the Mortgage Intelligence Hub\nWe centralized disparate spreadsheets, CRM records, and telephony logs into a unified RevOps pipeline with automated validation rules.\n\n1. Automated cross-referencing.\n2. Real-time SLA bottleneck alerts.\n3. Transparent P&L modeling.",
+      "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "tags": [
+        "RevOps",
+        "Data Analytics",
+        "99 Group",
+        "Automation"
+      ],
+      "category": "Strategy & Data",
+      "readTime": "4 min read",
+      "published": true,
+      "claps": 158,
+      "createdAt": "2026-11-02T15:30:00.000Z",
+      "updatedAt": "2026-11-02T15:30:00.000Z"
+    },
+    {
+      "id": "art-3",
+      "slug": "fine-tuning-indo-roberta-aspect-sentiment",
+      "title": "Aspect-Based Sentiment Analysis at Scale with Indo-RoBERTa and PyTorch",
+      "excerpt": "How automated NLP review parsing slashed customer feedback audit times by over 90% across 8,000+ localized comments.",
+      "content": "# Aspect-Based Sentiment Analysis at Scale with Indo-RoBERTa and PyTorch\n\nGeneric sentiment models fail on complex domain reviews. We fine-tuned Indo-RoBERTa to extract dual aspect-sentiment tuples with high precision.",
+      "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [],
+      "tags": [
+        "NLP",
+        "PyTorch",
+        "Indo-RoBERTa",
+        "Transformers"
+      ],
+      "category": "Machine Learning",
+      "readTime": "6 min read",
+      "published": true,
+      "claps": 87,
+      "createdAt": "2026-11-01T12:00:00.000Z",
+      "updatedAt": "2026-11-01T12:00:00.000Z"
+    },
+    {
+      "id": "art-4",
+      "slug": "automating-sla-telephony-verification",
+      "title": "Architecting Real-Time 3CX Telephony Audits and CDR Extraction",
+      "excerpt": "Bridging VoIP telephony logs with enterprise CRM pipelines to achieve zero-latency SLA compliance and agent performance scoring.",
+      "content": "# Architecting Real-Time 3CX Telephony Audits and CDR Extraction\n\nSales operations live or die by response velocity. This guide outlines how we automated call record extraction and SLA tracking with sub-second latency.",
+      "coverImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "gallery": [],
+      "tags": [
+        "Telephony",
+        "RevOps",
+        "3CX",
+        "Pipeline"
+      ],
+      "category": "Engineering",
+      "readTime": "5 min read",
+      "published": true,
+      "claps": 62,
+      "createdAt": "2026-10-28T09:00:00.000Z",
+      "updatedAt": "2026-10-28T09:00:00.000Z"
+    }
+  ]
+}
