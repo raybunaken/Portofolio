@@ -80,6 +80,202 @@ body {
   color: #242424;
 }
 
+/* Medium-Style Visual Canvas Editor (WYSIWYG) */
+.visual-medium-canvas {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #242424;
+  outline: none;
+  min-height: 450px;
+}
+
+.visual-medium-canvas:empty::before {
+  content: attr(data-placeholder);
+  color: #94a3b8;
+  font-style: italic;
+  pointer-events: none;
+  display: block;
+}
+
+.visual-medium-canvas h1 {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .visual-medium-canvas h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.visual-medium-canvas h2 {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .visual-medium-canvas h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.visual-medium-canvas h3 {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.visual-medium-canvas p {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.22rem;
+  line-height: 1.85;
+  color: #292929;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.003em;
+}
+
+@media (min-width: 640px) {
+  .visual-medium-canvas p {
+    font-size: 1.28rem;
+  }
+}
+
+.visual-medium-canvas blockquote {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #18181b;
+  border-left: 4px solid #09090b;
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+
+.visual-medium-canvas ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #292929;
+}
+
+.visual-medium-canvas ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #292929;
+}
+
+.visual-medium-canvas li {
+  margin-bottom: 0.5rem;
+}
+
+.visual-medium-canvas strong {
+  font-weight: 700;
+  color: #111111;
+}
+
+.visual-medium-canvas em {
+  font-style: italic;
+}
+
+.visual-medium-canvas code:not(pre code) {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.88em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.canvas-divider {
+  margin: 3.5rem 0;
+  text-align: center;
+  user-select: none;
+}
+
+.canvas-divider-dots {
+  font-family: Charter, Georgia, "Times New Roman", Cambria, serif;
+  font-size: 1.75rem;
+  color: #94a3b8;
+  letter-spacing: 1.3em;
+  font-weight: 300;
+  display: inline-block;
+  padding-left: 1.3em;
+}
+
+.canvas-code-card {
+  margin: 2rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  background-color: #0d1117;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.canvas-code-header {
+  background-color: #161b22;
+  padding: 0.625rem 1rem;
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #94a3b8;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.canvas-code-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.canvas-code-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.canvas-code-pre {
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #34d399;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

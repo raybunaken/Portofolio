@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import confetti from "canvas-confetti";
@@ -25,6 +25,7 @@ import {
 import MarkdownViewer from "@/components/MarkdownViewer";
 import CarouselManager from "@/components/CarouselManager";
 import ImageCarousel from "@/components/ImageCarousel";
+import VisualCanvasEditor, { VisualCanvasEditorRef } from "@/components/VisualCanvasEditor";
 import { Project } from "@/lib/types";
 
 interface ProjectEditorProps {
@@ -90,8 +91,11 @@ Shipped to production with zero regressions.`
 
   // Mode: "write" | "preview" | "split"
   const [mode, setMode] = useState<"write" | "preview" | "split">("write");
+  const [canvasView, setCanvasView] = useState<"visual" | "markdown">("visual");
   const [showSettingsDrawer, setShowSettingsDrawer] = useState(false);
   const [saving, setSaving] = useState(false);
+
+  const visualCanvasRef = useRef<VisualCanvasEditorRef>(null);
 
   const handleTitleChange = (val: string) => {
     setTitle(val);
@@ -139,6 +143,71 @@ Shipped to production with zero regressions.`
     }, 10);
   };
 
+  // Visual Toolbar Handlers (Directly transform canvas visually)
+  const handleToolbarBold = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleBold();
+    } else {
+      insertFormatting("**", "**");
+    }
+  };
+
+  const handleToolbarItalic = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleItalic();
+    } else {
+      insertFormatting("*", "*");
+    }
+  };
+
+  const handleToolbarH1 = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleHeading(1);
+    } else {
+      insertFormatting("# ");
+    }
+  };
+
+  const handleToolbarH2 = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleHeading(2);
+    } else {
+      insertFormatting("## ");
+    }
+  };
+
+  const handleToolbarQuote = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleQuote();
+    } else {
+      insertFormatting("> ");
+    }
+  };
+
+  const handleToolbarCode = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.insertCodeBlock("typescript");
+    } else {
+      insertFormatting("```typescript\n", "\n```");
+    }
+  };
+
+  const handleToolbarList = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.toggleList();
+    } else {
+      insertFormatting("- ");
+    }
+  };
+
+  const handleToolbarDivider = () => {
+    if (canvasView === "visual" && visualCanvasRef.current) {
+      visualCanvasRef.current.insertDivider();
+    } else {
+      insertFormatting("\n\n---\n\n");
+    }
+  };
+
   const handleSave = async () => {
     if (!title.trim()) {
       alert("Judul project wajib diisi!");
@@ -147,6 +216,11 @@ Shipped to production with zero regressions.`
 
     setSaving(true);
     const key = localStorage.getItem("admin_key") || "";
+
+    const finalContent =
+      canvasView === "visual" && visualCanvasRef.current
+        ? visualCanvasRef.current.getMarkdown()
+        : content;
 
     const payload: Partial<Project> = {
       title,
@@ -165,7 +239,7 @@ Shipped to production with zero regressions.`
         ...(stat1Label && stat1Value ? [{ label: stat1Label, value: stat1Value }] : []),
         ...(stat2Label && stat2Value ? [{ label: stat2Label, value: stat2Value }] : []),
       ],
-      content,
+      content: finalContent,
     };
 
     try {
@@ -277,7 +351,7 @@ Shipped to production with zero regressions.`
           <div className="sticky top-16 z-30 mb-8 max-w-lg mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-full px-3 py-1.5 shadow-xl shadow-slate-900/5 flex items-center justify-between gap-1 text-slate-700">
             <button
               type="button"
-              onClick={() => insertFormatting("**", "**")}
+              onClick={handleToolbarBold}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Bold"
             >
@@ -285,7 +359,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
-              onClick={() => insertFormatting("*", "*")}
+              onClick={handleToolbarItalic}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Italic"
             >
@@ -294,7 +368,7 @@ Shipped to production with zero regressions.`
             <span className="w-px h-4 bg-slate-200" />
             <button
               type="button"
-              onClick={() => insertFormatting("# ")}
+              onClick={handleToolbarH1}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="H1 Heading"
             >
@@ -302,7 +376,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
-              onClick={() => insertFormatting("## ")}
+              onClick={handleToolbarH2}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="H2 Subheading"
             >
@@ -311,7 +385,7 @@ Shipped to production with zero regressions.`
             <span className="w-px h-4 bg-slate-200" />
             <button
               type="button"
-              onClick={() => insertFormatting("> ")}
+              onClick={handleToolbarQuote}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Pull Quote"
             >
@@ -319,7 +393,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
-              onClick={() => insertFormatting("```typescript\n", "\n```")}
+              onClick={handleToolbarCode}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Code Block"
             >
@@ -327,7 +401,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
-              onClick={() => insertFormatting("- ")}
+              onClick={handleToolbarList}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Bullet List"
             >
@@ -335,7 +409,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
-              onClick={() => insertFormatting("\n\n---\n\n")}
+              onClick={handleToolbarDivider}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors font-serif font-bold text-xs"
               title="Medium Divider (···)"
             >
@@ -397,16 +471,57 @@ Shipped to production with zero regressions.`
               </div>
             )}
 
-            {/* Aesthetic Medium Body Textarea */}
+            {/* Aesthetic Medium Body Canvas / Editor */}
             <div className="pt-4 border-t border-slate-100">
-              <textarea
-                id="project-medium-textarea"
-                rows={20}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                placeholder="Write your case study here... Break down technical decisions, architecture, and impact."
-                className="w-full text-[19px] sm:text-[21px] font-serif leading-[1.85] text-[#242424] border-none outline-none bg-transparent resize-y placeholder:text-slate-300"
-              />
+              <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-100/60">
+                <span className="text-xs font-semibold text-zinc-400">
+                  {canvasView === "visual"
+                    ? "Interactive Visual Canvas (WYSIWYG)"
+                    : "Markdown Source Code"}
+                </span>
+                <div className="flex items-center bg-zinc-100 p-0.5 rounded-lg text-xs font-medium">
+                  <button
+                    type="button"
+                    onClick={() => setCanvasView("visual")}
+                    className={`px-3 py-1 rounded-md transition-all cursor-pointer ${
+                      canvasView === "visual"
+                        ? "bg-white text-zinc-950 shadow-2xs font-semibold"
+                        : "text-zinc-500 hover:text-zinc-950"
+                    }`}
+                  >
+                    Visual Canvas
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCanvasView("markdown")}
+                    className={`px-3 py-1 rounded-md transition-all cursor-pointer ${
+                      canvasView === "markdown"
+                        ? "bg-white text-zinc-950 shadow-2xs font-semibold"
+                        : "text-zinc-500 hover:text-zinc-950"
+                    }`}
+                  >
+                    Source Markdown
+                  </button>
+                </div>
+              </div>
+
+              {canvasView === "visual" ? (
+                <VisualCanvasEditor
+                  ref={visualCanvasRef}
+                  value={content}
+                  onChange={setContent}
+                  placeholder="Write your case study here... Break down technical decisions, architecture, and impact."
+                />
+              ) : (
+                <textarea
+                  id="project-medium-textarea"
+                  rows={20}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  placeholder="Write your case study here... Break down technical decisions, architecture, and impact."
+                  className="w-full text-sm font-mono leading-relaxed text-[#242424] border-none outline-none bg-transparent resize-y placeholder:text-slate-300 p-2"
+                />
+              )}
             </div>
           </div>
         )}
@@ -429,13 +544,15 @@ Shipped to production with zero regressions.`
                 placeholder="Summary..."
                 className="w-full text-sm text-slate-500 font-serif border-none outline-none bg-transparent resize-none"
               />
-              <textarea
-                id="project-medium-textarea"
-                rows={18}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-                className="w-full text-base font-serif leading-relaxed border-t border-slate-100 pt-4 outline-none bg-transparent resize-y"
-              />
+              <div className="border-t border-slate-100 pt-4">
+                <VisualCanvasEditor
+                  ref={visualCanvasRef}
+                  value={content}
+                  onChange={setContent}
+                  placeholder="Type case study content..."
+                  minHeight="350px"
+                />
+              </div>
             </div>
 
             <div className="p-4 sm:p-6 overflow-y-auto max-h-[800px]">
