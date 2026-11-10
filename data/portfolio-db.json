@@ -262,8 +262,8 @@
       "id": "proj-macroeconomic-shifts",
       "slug": "macroeconomic-market-shift-analysis",
       "title": "Macroeconomic Market Factor Shifts on Tech Equities (Sinta 4)",
-      "summary": "Peer-reviewed publication evaluating the impact of macroeconomic variables (Fed interest rate changes) on technology sector equity behavior.",
-      "content": "# Macroeconomic Market Factor Shifts on Tech Equities\n\n**Researcher, Sinta 4 Journal Publication**\n\n## Research Scope\nEvaluated how shifts in central bank interest rates impact equity valuations in the technology sector across pre- and post-pandemic market regimes.\n\n## Methodology\n- Quantitative econometric modeling using Python and pandas.\n- Statistical hypothesis testing and time-series correlation analysis.",
+      "summary": "Peer-reviewed publication in JAMI (Sinta 4 Accredited) evaluating the shift of machine learning feature importance on tech equity behavior across pre- and post-COVID regimes.",
+      "content": "# Macroeconomic Market Factor Shifts on Tech Equities\n\n**Published Researcher, JAMI (Jurnal Ahli Muda Indonesia) | Sinta 4 Accredited**\n\n- **Journal**: JAMI (Jurnal Ahli Muda Indonesia) - Vol. 6 No. 2 (Desember 2025)\n- **Original Paper Title**: *Pergeseran Feature Importance pada Prediksi Pasar Saham Teknologi Menggunakan Machine Learning: Studi Komparatif Pra dan Pasca Pandemi COVID-19*\n- **Lead Author**: Dzaky Rayssa Buntoro (Universitas Muhammadiyah Surakarta)\n- **Official DOI**: [10.46510/jami.v6i2.380](https://doi.org/10.46510/jami.v6i2.380)\n- **Official OJS Publication**: [View on JAMI Portal (journal.akb.ac.id)](https://journal.akb.ac.id/index.php/jami/article/view/380)\n- **Direct PDF Backup**: [View Document on Google Drive](https://drive.google.com/file/d/1Yz-01FNK2vJ1z27GoguI-aCo2pDqa40E/view?usp=sharing)\n\n## Research Scope\nEvaluated how shifts in macroeconomic variables (such as Fed interest rate policy, ATR, and VIX) impact predictive market models (XGBoost and Random Forest) for technology sector equities (Invesco QQQ Trust / QQQ) across pre- and post-pandemic market regimes.\n\n## Methodology & Findings\n- Quantitative econometric and machine learning modeling using Python, scikit-learn, and pandas.\n- Findings indicate a measurable increase in post-pandemic predictability, with feature importance shifting from purely technical indicators to macroeconomic and volatility determinants.",
       "category": "Quantitative Analytics",
       "tags": [
         "Python",
@@ -276,7 +276,7 @@
       "gallery": [
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
       ],
-      "demoUrl": "https://drive.google.com/file/d/1Yz-01FNK2vJ1z27GoguI-aCo2pDqa40E/view?usp=sharing",
+      "demoUrl": "https://journal.akb.ac.id/index.php/jami/article/view/380",
       "githubUrl": "https://github.com/dzakybuntoro/macroeconomic-tech-equities",
       "featured": true,
       "client": "Sinta 4 Journal",

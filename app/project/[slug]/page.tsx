@@ -103,7 +103,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                   >
                     <span>
                       {project.demoUrl.includes("drive.google.com")
-                        ? "View Document (Drive)"
+                        ? "View Document (PDF)"
+                        : project.demoUrl.includes("journal") ||
+                          project.demoUrl.includes("article") ||
+                          project.demoUrl.includes("doi.org") ||
+                          project.demoUrl.includes("cibangsa")
+                        ? "View Publication (Journal)"
                         : "Live Demo"}
                     </span>
                     <ExternalLink className="w-3.5 h-3.5" />

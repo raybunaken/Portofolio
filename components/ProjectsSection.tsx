@@ -158,7 +158,15 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                         target="_blank"
                         rel="noreferrer"
                         className="p-2 rounded-lg text-zinc-500 hover:text-zinc-950 hover:bg-zinc-100 transition-colors"
-                        title="Open Live Preview"
+                        title={
+                          project.demoUrl.includes("drive.google.com")
+                            ? "View Document (PDF)"
+                            : project.demoUrl.includes("journal") ||
+                              project.demoUrl.includes("article") ||
+                              project.demoUrl.includes("cibangsa")
+                            ? "View Publication (Journal)"
+                            : "Open Live Preview"
+                        }
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>
