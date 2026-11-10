@@ -15,8 +15,9 @@ import {
   GitCommit,
   Radio,
   FileText,
+  ArrowUpRight,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/BrandIcons";
+import { GithubIcon, LinkedinIcon, TwitterIcon, KaggleIcon } from "@/components/BrandIcons";
 import { Profile, Project } from "@/lib/types";
 
 interface HeroProps {
@@ -105,6 +106,17 @@ export default function Hero({ profile, projects = [] }: HeroProps) {
               >
                 <LinkedinIcon className="w-3.5 h-3.5" />
               </a>
+              {profile.kaggle && (
+                <a
+                  href={profile.kaggle}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-7 h-7 rounded-lg bg-zinc-100 hover:bg-zinc-950 hover:text-white flex items-center justify-center text-zinc-600 transition-colors"
+                  title="Kaggle Profile"
+                >
+                  <KaggleIcon className="w-3.5 h-3.5" />
+                </a>
+              )}
               <a
                 href={`mailto:${profile.email}`}
                 className="w-7 h-7 rounded-lg bg-zinc-100 hover:bg-zinc-950 hover:text-white flex items-center justify-center text-zinc-600 transition-colors"
@@ -507,6 +519,19 @@ export default function Hero({ profile, projects = [] }: HeroProps) {
           >
             <span>Case Studies & Articles</span>
           </Link>
+
+          {profile.resumeUrl && (
+            <a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-5 py-3 rounded-xl text-sm font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200/80 border border-zinc-200/90 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer active:scale-[0.98]"
+            >
+              <FileText className="w-4 h-4 text-zinc-600" />
+              <span>Resume (PDF)</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
+            </a>
+          )}
         </div>
       </div>
 

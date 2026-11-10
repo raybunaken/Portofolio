@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Shield, Menu, X, ArrowUpRight } from "lucide-react";
+import { Shield, Menu, X, ArrowUpRight, FileText } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,8 +64,18 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Actions: CMS Admin & Contact */}
+          {/* Actions: Resume, CMS Admin & Contact */}
           <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://drive.google.com/file/d/1FMdt6bH_VMHjKaUQ3736MW0n2QSDb_CF/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200/80 border border-zinc-200/90 transition-all"
+            >
+              <FileText className="w-3.5 h-3.5 text-zinc-500" />
+              <span>Resume</span>
+            </a>
+
             <Link
               href="/admin"
               className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200/80 border border-zinc-200/90 transition-all"

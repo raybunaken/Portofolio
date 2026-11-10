@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
-import { Mail, Send, CheckCircle2, MessageSquare } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from "@/components/BrandIcons";
+import { Mail, Send, CheckCircle2, MessageSquare, FileText, ArrowUpRight } from "lucide-react";
+import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon, KaggleIcon } from "@/components/BrandIcons";
 import { Profile } from "@/lib/types";
 
 interface ContactSectionProps {
@@ -67,6 +67,28 @@ export default function ContactSection({ profile }: ContactSectionProps) {
                       </span>
                     </div>
                   </a>
+
+                  {profile.resumeUrl && (
+                    <a
+                      href={profile.resumeUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-50 hover:bg-zinc-100 border border-zinc-200/80 transition-colors group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-lg bg-zinc-950 text-white flex items-center justify-center shadow-2xs">
+                          <FileText className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <span className="text-xs text-zinc-500 font-medium block">Curriculum Vitae</span>
+                          <span className="text-sm font-semibold text-zinc-950 group-hover:text-zinc-700 transition-colors">
+                            View Official CV (PDF)
+                          </span>
+                        </div>
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-zinc-900 transition-colors" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Social Icons */}
@@ -87,6 +109,17 @@ export default function ContactSection({ profile }: ContactSectionProps) {
                   >
                     <LinkedinIcon className="w-4 h-4" />
                   </a>
+                  {profile.kaggle && (
+                    <a
+                      href={profile.kaggle}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-9 h-9 rounded-lg bg-zinc-100 hover:bg-zinc-950 hover:text-white border border-zinc-200/70 flex items-center justify-center text-zinc-700 transition-colors"
+                      title="Kaggle Profile"
+                    >
+                      <KaggleIcon className="w-4 h-4" />
+                    </a>
+                  )}
                   {profile.twitter && (
                     <a
                       href={profile.twitter}

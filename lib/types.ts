@@ -48,7 +48,9 @@ export interface Profile {
   linkedin: string;
   twitter?: string;
   instagram?: string;
+  kaggle?: string;
   resumeUrl?: string;
+  driveFolderUrl?: string;
   stats: { label: string; value: string }[];
   featuredTech: { name: string; category: string; icon?: string }[];
 }

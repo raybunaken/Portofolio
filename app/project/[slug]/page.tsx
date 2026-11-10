@@ -94,14 +94,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                     <span>Source Code</span>
                   </a>
                 )}
-                {project.demoUrl && (
+                {project.demoUrl && project.demoUrl !== "#" && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-zinc-950 hover:bg-zinc-800 border border-zinc-950 shadow-xs transition-all"
                   >
-                    <span>Live Demo</span>
+                    <span>
+                      {project.demoUrl.includes("drive.google.com")
+                        ? "View Document (Drive)"
+                        : "Live Demo"}
+                    </span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}

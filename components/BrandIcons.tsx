@@ -35,3 +35,12 @@ export function InstagramIcon({ className = "w-4 h-4" }: { className?: string })
     </svg>
   );
 }
+
+export function KaggleIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.246l-5.18-6.094-1.242 1.195v4.757c0 .281-.141.422-.422.422H5.163c-.281 0-.422-.141-.422-.422V.422C4.741.141 4.882 0 5.163 0h3.106c.281 0 .422.141.422.422v14.976l6.141-6.141c.141-.141.293-.211.457-.211h3.422c.164 0 .258.07.281.211.023.164-.035.281-.176.352l-6.844 6.703 7.055 7.265c.117.117.152.223.105.328z" />
+    </svg>
+  );
+}
+
