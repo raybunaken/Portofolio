@@ -43,7 +43,7 @@ export default function ImageCarousel({ coverImage, gallery = [], title = "Proje
         <img
           src={allImages[currentIndex]}
           alt={`${title} slide ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-all duration-500 ease-out"
+          className="w-full h-full object-cover object-top transition-all duration-500 ease-out"
         />
 
         {/* Ambient Gradient Overlay */}

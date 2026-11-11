@@ -321,7 +321,7 @@ export default function Hero({ profile, projects = [] }: HeroProps) {
         >
           <div className="relative h-28 bg-zinc-950 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
+              src="/uploads/projects/skillsy-banner.png"
               alt="Skillsy Preview"
               className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-500"
             />

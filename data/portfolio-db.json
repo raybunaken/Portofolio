@@ -77,24 +77,22 @@
       "id": "proj-skillsy",
       "slug": "skillsy-ai-career-analytics",
       "title": "Skillsy (skillsy.my.id) - Explainable AI Career & Skill Diagnostics",
-      "summary": "Founder & Lead Developer. Selected into the Alibaba Cloud AI Catalyst Program with dedicated compute infrastructure. Built an explainable, transparent non-blackbox skill scoring engine.",
-      "content": "# Skillsy - Explainable AI Career Analytics & Skill Diagnostics Platform\n\n**Founder & Lead Developer (Alibaba Cloud AI Catalyst Program Cohort)**\n\n## Overview\nSkillsy (accessible at `skillsy.my.id`) addresses the lack of transparency in automated career assessment and recruitment matching. Rather than relying on opaque 'black-box' scoring, Skillsy utilizes a structured knowledge base and weighted evaluation algorithms.\n\n## Program Achievements\n- **Alibaba Cloud AI Catalyst Program**: Selected for cohort acceptance, securing dedicated AI/cloud compute credits and specialized architectural consultation from Alibaba Cloud engineers.\n- **Bank Indonesia Hackathon (Top 480)**: Advanced the initial prototype into an active AI-driven career analytics startup platform.\n\n## Architecture & Tech Stack\n- **Explainable Scoring Engine**: Designed rule-assisted knowledge-base scoring algorithms that output direct, interpretable skill diagnostic feedback.\n- **Web Deployment & Cloud**: Scalable inference endpoints deployed on Alibaba Cloud with Python, FastAPI, and responsive front-end interfaces.",
+      "summary": "Founder & Lead Developer. Selected into the Alibaba Cloud AI Catalyst Program with dedicated compute infrastructure. Built a client-side local-first career copilot and explainable skill scoring engine.",
+      "content": "# Skillsy - Explainable AI Career Analytics & Skill Diagnostics Platform\n\n**Founder & Lead Developer (Alibaba Cloud AI Catalyst Program Cohort)**\n\n## Overview\nSkillsy (accessible at `skillsy.my.id`) addresses the lack of transparency in automated career assessment and recruitment matching. Rather than relying on opaque 'black-box' scoring, Skillsy utilizes a local-first client-side copilot with BYOK LLM integration (Google Gemini, Groq) and weighted evaluation algorithms.\n\n## Program Achievements\n- **Alibaba Cloud AI Catalyst Program**: Selected for cohort acceptance, securing dedicated AI/cloud compute credits and specialized architectural consultation from Alibaba Cloud engineers.\n- **Bank Indonesia Hackathon (Top 480)**: Advanced the initial prototype into an active AI-driven career analytics startup platform.\n\n## Architecture & Tech Stack\n- **Client-Side Manifest V3 Extension**: Local DOM parsing on active job tabs with zero intermediary data harvesting.\n- **Explainable Scoring Engine**: Designed rule-assisted knowledge-base scoring algorithms that output direct, interpretable skill diagnostic feedback.\n- **Interactive Document Editor**: In-browser PDF resume generator with dynamic floating AI revision bubble.",
       "category": "AI & Startup",
       "tags": [
         "Python",
         "FastAPI",
         "Explainable AI",
         "Alibaba Cloud",
-        "Knowledge Base"
+        "Gemini API"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/skillsy-banner.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/skillsy-banner.png"
       ],
       "demoUrl": "https://skillsy.my.id",
-      "githubUrl": "https://github.com/dzakybuntoro/skillsy",
+      "githubUrl": "https://github.com/raybunaken/Skillsy",
       "featured": true,
       "client": "Skillsy Venture",
       "year": "2026",
@@ -115,8 +113,8 @@
       "id": "proj-mortgage-hub",
       "slug": "mortgage-intelligence-hub",
       "title": "Mortgage Intelligence Hub - 99 Group (Rumah123.com)",
-      "summary": "Consolidated 30+ fragmented spreadsheets into a centralized RevOps executive dashboard, diagnosing Q3 pipeline bottlenecks and cutting analysis errors by ~80%.",
-      "content": "# Mortgage Intelligence Hub - Enterprise Operations Architecture\n\n**Sales Operations Analyst at 99 Group (Rumah123.com)**\n\n## Challenge\nMortgage sales and operations pipelines were fragmented across 30+ disjointed Google Sheets, banking portals, and CRM telephony records, causing manual cross-referencing delays and reconciliation errors.\n\n## Impact & Engineered Solutions\n- **Single Source of Truth**: Architected the centralized RevOps executive dashboard giving management a helicopter view of multi-channel attribution and pipeline performance.\n- **Operational Auditing & Accuracy**: Slashed manual cross-referencing cycles and analysis errors by **~80%** with automated data validation pipelines.\n- **AI-Driven Lead Quality Audit**: Clustered 8,000+ lead interaction records using NLP to uncover operational SOP deviations and conversion bottlenecks.\n- **Harpropnas Internal Tools**: Built internal web calculators and interactive operational tools for mortgage workflows used directly during major company campaigns.",
+      "summary": "Consolidated 30+ fragmented spreadsheets into a centralized RevOps executive pipeline, diagnosing Q3 pipeline bottlenecks and cutting analysis errors by ~80%.",
+      "content": "# Mortgage Intelligence Hub - Enterprise Operations Architecture\n\n**Sales Operations Analyst at 99 Group (Rumah123.com)**\n\n## Challenge\nMortgage sales and operations pipelines were fragmented across 30+ disjointed Google Sheets, banking portals, and CRM telephony records, causing manual cross-referencing delays and reconciliation errors.\n\n## Impact & Engineered Solutions\n- **Single Source of Truth**: Architected the centralized RevOps executive dashboard giving management a helicopter view of multi-channel attribution and pipeline performance.\n- **Operational Auditing & Accuracy**: Slashed manual cross-referencing cycles and analysis errors by **~80%** with automated data validation pipelines.\n- **AI-Driven Lead Quality Audit**: Clustered 8,000+ lead interaction records using NLP to uncover operational SOP deviations and conversion bottlenecks.\n- **Take-Over & New Booking Calculators**: Engineered interactive operational tools and pipeline calculators directly deployed for mortgage workflows during major Harpropnas campaigns.",
       "category": "Data & RevOps",
       "tags": [
         "Python",
@@ -125,12 +123,13 @@
         "NLP Clustering",
         "Looker Studio"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/mortgage-hub-r123.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/mortgage-hub-r123.png",
+        "/uploads/projects/sales-ops-automation-99.png",
+        "/uploads/projects/doc-99-experience.png"
       ],
-      "demoUrl": "https://rumah123.com",
+      "demoUrl": "https://drive.google.com/file/d/1IWK0b5KeZEcCB5Qy_nenoN-_BNijMRMf/view?usp=sharing",
       "githubUrl": "",
       "featured": true,
       "client": "99 Group / Rumah123",
@@ -151,9 +150,9 @@
     {
       "id": "proj-sigap",
       "slug": "sigap-bank-indonesia-hackathon",
-      "title": "SIGAP Platform - Labor Market Skill-Gap Analysis",
+      "title": "SIGAP Platform - Labor Market Skill-Gap Analysis (Bank Indonesia Hackathon)",
       "summary": "Team Lead & Product Strategist for Top 480 Hackathon Bank Indonesia 2026. Designed end-to-end skill-gap analytics connecting industry demand with personalized learning paths.",
-      "content": "# SIGAP Platform - Bank Indonesia Hackathon 2026\n\n**Top 480 Semifinalist | Team Lead & Product Strategist**\n\n## Overview\nSIGAP connects Indonesian labor market requirements with individual higher-education curricula and personalized upskilling pathways.\n\n## Key Deliverables\n- Led cross-functional team across research, data pipeline design, and interactive UI prototyping.\n- Built labor-market skill taxonomy mapping real-time job vacancy demands against university syllabi.\n- Implemented Python and cloud database integrations for instantaneous candidate gap scoring.",
+      "content": "# SIGAP Platform - Bank Indonesia Hackathon 2026\n\n**Top 480 Semifinalist | Team Lead & Product Strategist**\n\n## Overview\nSIGAP connects Indonesian labor market requirements with individual higher-education curricula and personalized upskilling pathways.\n\n## Key Deliverables\n- Led cross-functional team across research, data pipeline design, and interactive UI prototyping.\n- Built labor-market skill taxonomy mapping real-time job vacancy demands against university syllabi.\n- Implemented Python and cloud database integrations for instantaneous candidate gap scoring.\n\n## Official Presentation Deck\n- **Google Drive Presentation (PPT)**: [View Document (Drive)](https://drive.google.com/file/d/15L8yZNyHnuaHhie0Ada8X6Iho36uzN8Q/view?usp=sharing)",
       "category": "Product & AI",
       "tags": [
         "Python",
@@ -162,12 +161,11 @@
         "Cloud DB",
         "Streamlit"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/sigap-hackathon.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/sigap-hackathon.png"
       ],
-      "demoUrl": "#",
+      "demoUrl": "https://drive.google.com/file/d/15L8yZNyHnuaHhie0Ada8X6Iho36uzN8Q/view?usp=sharing",
       "githubUrl": "https://github.com/dzakybuntoro/sigap-bi",
       "featured": true,
       "client": "Bank Indonesia Hackathon",
@@ -188,9 +186,9 @@
     {
       "id": "proj-absa-nlp",
       "slug": "aspect-based-sentiment-analysis",
-      "title": "Aspect-Based Sentiment Analysis (ABSA) with Indo-RoBERTa",
+      "title": "Aspect-Based Sentiment Analysis (ABSA) & Ulasan.id",
       "summary": "Implemented fine-tuned Indo-RoBERTa and T5 models to extract fine-grained business aspects and classify multi-class customer sentiment from unstructured reviews.",
-      "content": "# Aspect-Based Sentiment Analysis (ABSA) for Indonesian Customer Feedback\n\n**Lead Researcher & Developer (Final Academic Project)**\n\n## Technical Implementation\n- Fine-tuned transformer models (`Indo-RoBERTa` and `T5`) to perform aspect extraction and multi-class sentiment polarity classification.\n- Built automated web scraping pipelines using Selenium and BeautifulSoup to gather and curate raw consumer feedback.\n- Slashed manual review analysis time by **>90%** with high contextual accuracy.",
+      "content": "# Aspect-Based Sentiment Analysis (ABSA) for Indonesian Customer Feedback\n\n**Lead Researcher & Developer (Final Academic Project & Technopreneurship)**\n\n## Technical Implementation\n- Fine-tuned transformer models (`Indo-RoBERTa` and `T5`) to perform aspect extraction and multi-class sentiment polarity classification.\n- Built automated web scraping pipelines using Selenium and BeautifulSoup to gather and curate raw consumer feedback.\n- Slashed manual review analysis time by **>90%** with high contextual accuracy.\n\n## Research & Presentation\n- **Project Document (Drive)**: [View Technopreneurship Project Ulasan.id](https://drive.google.com/file/d/1ojbeNcs-CRdHnmKc72U1GeWx8Ks7BjEe/view?usp=sharing)",
       "category": "AI & NLP",
       "tags": [
         "Indo-RoBERTa",
@@ -199,12 +197,12 @@
         "Selenium",
         "NLP"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/ulasan-id-absa.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/ulasan-id-absa.png",
+        "/uploads/projects/thesis-skripsi.png"
       ],
-      "demoUrl": "#",
+      "demoUrl": "https://drive.google.com/file/d/1ojbeNcs-CRdHnmKc72U1GeWx8Ks7BjEe/view?usp=sharing",
       "githubUrl": "https://github.com/dzakybuntoro/indonesian-absa",
       "featured": true,
       "client": "Research Project",
@@ -226,8 +224,8 @@
       "id": "proj-gmaps-intelligence",
       "slug": "google-maps-review-intelligence",
       "title": "Google Maps Review Intelligence - SIML Conference",
-      "summary": "Automated data harvesting and aspect-level NLP sentiment pipeline across 100+ business profiles published at SIML Conference.",
-      "content": "# Google Maps Review Intelligence\n\n**Published Researcher, SIML Conference 2025-2026**\n\n## Overview\nAutomated end-to-end scraping and sentiment analytics pipeline processing consumer reviews across 100+ business locations.\n\n## Highlights\n- Integrated Selenium headless scrapers with Streamlit analytical dashboards.\n- Enabled local businesses to track aspect-level service quality metrics in real-time.",
+      "summary": "Published conference paper: 'Design and Development of a Business Intelligence Dashboard for Sentiment Analysis and Topic Extraction from Google Maps Reviews Using Deep Learning'.",
+      "content": "# Google Maps Review Intelligence\n\n**Published Researcher, SIML Conference 2025-2026**\n\n## Overview\nAutomated end-to-end scraping and sentiment analytics pipeline processing consumer reviews across 100+ business locations.\n\n- **Paper Title**: *Design and Development of a Business Intelligence Dashboard for Sentiment Analysis and Topic Extraction from Google Maps Reviews Using Deep Learning*\n- **Lead Researcher**: Dzaky Rayssa Buntoro\n- **Official Document (Drive)**: [View SIML Conference Paper](https://drive.google.com/file/d/1W3TLzvuQ31graHcVvEbB5zkDp8UmJRNX/view?usp=sharing)\n\n## Highlights\n- Integrated Selenium headless scrapers with Streamlit analytical dashboards.\n- Enabled local businesses to track aspect-level service quality metrics in real-time.",
       "category": "Research & AI",
       "tags": [
         "Selenium",
@@ -236,9 +234,10 @@
         "Data Scraping",
         "Python"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1532629345422-7515f3d16bb9?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/gmaps-siml-paper.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/gmaps-siml-paper.png",
+        "/uploads/projects/loa-acceptance.png"
       ],
       "demoUrl": "https://drive.google.com/file/d/1W3TLzvuQ31graHcVvEbB5zkDp8UmJRNX/view?usp=sharing",
       "githubUrl": "https://github.com/dzakybuntoro/gmaps-intelligence",
@@ -272,9 +271,9 @@
         "Sinta 4 Journal",
         "Data Science"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/market-shifts-sinta4.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/market-shifts-sinta4.png"
       ],
       "demoUrl": "https://journal.akb.ac.id/index.php/jami/article/view/380",
       "githubUrl": "https://github.com/dzakybuntoro/macroeconomic-tech-equities",
@@ -297,9 +296,9 @@
     {
       "id": "proj-telephony-automation",
       "slug": "revops-telephony-pipeline-automation",
-      "title": "RevOps & Telephony Pipeline Automation (3CX & CRM)",
+      "title": "Sales Operations Automation 99.co - Email Generator & Activity Logger",
       "summary": "Integrated 3CX telephony logs with enterprise CRM lead tracking, building custom Google Apps Script and Python automations that eliminated repetitive manual tasks.",
-      "content": "# RevOps & Telephony Pipeline Automation\n\n**99 Group (Rumah123.com)**\n\n## Key Deliverables\n- Integrated VoIP / Telephony logs (3CX) with CRM lead records for automated call tagging and SLA tracking.\n- Developed Google Apps Script triggers and automated data verification scripts.",
+      "content": "# Sales Operations Automation 99.co\n\n**Sales Operations Analyst at 99 Group (Rumah123.com)**\n\n- **Project Document (Drive)**: [View Sales Operations Automation Deck](https://drive.google.com/file/d/1IWK0b5KeZEcCB5Qy_nenoN-_BNijMRMf/view?usp=sharing)\n\n## Key Deliverables\n- Integrated VoIP / Telephony logs (3CX) with CRM lead records for automated call tagging and SLA tracking.\n- Developed Google Apps Script triggers and automated data verification scripts.",
       "category": "Operations Engineering",
       "tags": [
         "3CX",
@@ -308,9 +307,10 @@
         "Automation",
         "RevOps"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/sales-ops-automation-99.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/sales-ops-automation-99.png",
+        "/uploads/projects/doc-99-experience.png"
       ],
       "demoUrl": "https://drive.google.com/file/d/1IWK0b5KeZEcCB5Qy_nenoN-_BNijMRMf/view?usp=sharing",
       "githubUrl": "",
@@ -333,9 +333,9 @@
     {
       "id": "proj-maha-offset",
       "slug": "maha-offset-expansion-dashboard",
-      "title": "Maha Offset - Reseller Territory Market Research & BI Studio",
-      "summary": "Built business intelligence visualization dashboards to map reseller expansion territories and evaluate regional market potential.",
-      "content": "# Maha Offset - Reseller Expansion & Market Research Dashboard\n\n**Data & Market Research Intern**\n\n## Achievements\n- Conducted market research and competitor benchmarking across regional printing sectors.\n- Built interactive geospatial and sales visualization dashboards supporting executive territory expansion.",
+      "title": "Customer Segmentation (K-Means) & Market Expansion - Percetakan Maha Offset",
+      "summary": "Published research paper and market intelligence dashboard: 'ANALISIS SEGMENTASI PELANGGAN MENGGUNAKAN ALGORITMA K-MEANS CLUSTERING UNTUK OPTIMALISASI STRATEGI PEMASARAN'.",
+      "content": "# Customer Segmentation (K-Means) & Market Research\n\n**Data & Market Research Intern at Percetakan Maha Offset**\n\n- **Paper Title**: *ANALISIS SEGMENTASI PELANGGAN MENGGUNAKAN ALGORITMA K-MEANS CLUSTERING UNTUK OPTIMALISASI STRATEGI PEMASARAN DI PERCETAKAN MAHAOFFSET*\n- **Author**: Dzaky Rayssa Buntoro\n- **Document (Drive)**: [View Publication PDF (Drive)](https://drive.google.com/file/d/1cxOCQkKkF00CUX27C3icY3Gca5Iq_mwb/view?usp=sharing)\n\n## Achievements\n- Conducted market research and customer segmentation clustering across regional printing sectors.\n- Built interactive geospatial and sales visualization dashboards supporting executive territory expansion.",
       "category": "Market Intelligence",
       "tags": [
         "Looker Studio",
@@ -343,9 +343,10 @@
         "Business Analytics",
         "BI Dashboards"
       ],
-      "coverImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80",
+      "coverImage": "/uploads/projects/mahaoffset-kmeans.png",
       "gallery": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+        "/uploads/projects/mahaoffset-kmeans.png",
+        "/uploads/projects/mahaoffset-certificate.png"
       ],
       "demoUrl": "https://drive.google.com/file/d/1cxOCQkKkF00CUX27C3icY3Gca5Iq_mwb/view?usp=sharing",
       "githubUrl": "",
