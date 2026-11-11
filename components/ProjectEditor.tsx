@@ -92,6 +92,7 @@ Shipped to production with zero regressions.`
   // Mode: "write" | "preview" | "split"
   const [mode, setMode] = useState<"write" | "preview" | "split">("write");
   const [canvasView, setCanvasView] = useState<"visual" | "markdown">("visual");
+  const [activeTag, setActiveTag] = useState<string>("p");
   const [showSettingsDrawer, setShowSettingsDrawer] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -348,9 +349,10 @@ Shipped to production with zero regressions.`
       <main className="flex-1 max-w-6xl xl:max-w-7xl mx-auto w-full px-4 sm:px-8 py-10 relative">
         {/* Floating/Sticky Formatting Toolbar */}
         {mode !== "preview" && (
-          <div className="sticky top-16 z-30 mb-8 max-w-lg mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-full px-3 py-1.5 shadow-xl shadow-slate-900/5 flex items-center justify-between gap-1 text-slate-700">
+          <div className="sticky top-16 z-30 mb-8 max-w-lg mx-auto bg-white/95 backdrop-blur-xl border border-slate-200/90 rounded-full px-3 py-1.5 shadow-xl shadow-slate-900/5 flex items-center justify-between gap-1 text-slate-700 select-none">
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarBold}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Bold"
@@ -359,6 +361,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarItalic}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Italic"
@@ -368,16 +371,22 @@ Shipped to production with zero regressions.`
             <span className="w-px h-4 bg-slate-200" />
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarH1}
-              className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className={`p-1.5 rounded-full transition-colors ${
+                activeTag === "h1" ? "bg-zinc-950 text-white shadow-xs" : "hover:bg-slate-100 hover:text-slate-900"
+              }`}
               title="H1 Heading"
             >
               <Heading1 className="w-4 h-4" />
             </button>
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarH2}
-              className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className={`p-1.5 rounded-full transition-colors ${
+                activeTag === "h2" ? "bg-zinc-950 text-white shadow-xs" : "hover:bg-slate-100 hover:text-slate-900"
+              }`}
               title="H2 Subheading"
             >
               <Heading2 className="w-4 h-4" />
@@ -385,14 +394,18 @@ Shipped to production with zero regressions.`
             <span className="w-px h-4 bg-slate-200" />
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarQuote}
-              className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
+              className={`p-1.5 rounded-full transition-colors ${
+                activeTag === "blockquote" ? "bg-zinc-950 text-white shadow-xs" : "hover:bg-slate-100 hover:text-slate-900"
+              }`}
               title="Pull Quote"
             >
               <Quote className="w-4 h-4" />
             </button>
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarCode}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Code Block"
@@ -401,6 +414,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarList}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors"
               title="Bullet List"
@@ -409,6 +423,7 @@ Shipped to production with zero regressions.`
             </button>
             <button
               type="button"
+              onMouseDown={(e) => e.preventDefault()}
               onClick={handleToolbarDivider}
               className="p-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors font-serif font-bold text-xs"
               title="Medium Divider (···)"
@@ -510,6 +525,7 @@ Shipped to production with zero regressions.`
                   ref={visualCanvasRef}
                   value={content}
                   onChange={setContent}
+                  onActiveTagChange={setActiveTag}
                   placeholder="Write your case study here... Break down technical decisions, architecture, and impact."
                 />
               ) : (
@@ -549,6 +565,7 @@ Shipped to production with zero regressions.`
                   ref={visualCanvasRef}
                   value={content}
                   onChange={setContent}
+                  onActiveTagChange={setActiveTag}
                   placeholder="Type case study content..."
                   minHeight="350px"
                 />

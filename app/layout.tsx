@@ -50,15 +50,37 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if (typeof window !== 'undefined') {
-                const removePortal = () => {
-                  document.querySelectorAll('nextjs-portal').forEach((el) => el.remove());
+              (function() {
+                if (typeof window === 'undefined') return;
+                // Suppress browser extension hydration mismatch noise (Bitdefender, Grammarly, etc.)
+                const originalError = console.error;
+                console.error = function(...args) {
+                  const str = args.map(function(a) {
+                    return typeof a === 'string' ? a : (a && a.message) ? a.message : '';
+                  }).join(' ');
+                  if (
+                    str.indexOf('bis_skin_checked') !== -1 ||
+                    (str.indexOf('hydrated') !== -1 && str.indexOf('attributes of the server rendered HTML') !== -1) ||
+                    (str.indexOf('Hydration') !== -1 && str.indexOf('attribute') !== -1)
+                  ) {
+                    return;
+                  }
+                  originalError.apply(console, args);
                 };
-                new MutationObserver(() => removePortal()).observe(document.documentElement, {
-                  childList: true,
-                  subtree: true,
-                });
-              }
+
+                // Remove dev error overlay portal if triggered by extension attributes
+                const removePortal = function() {
+                  document.querySelectorAll('nextjs-portal').forEach(function(el) {
+                    el.remove();
+                  });
+                };
+                if (typeof MutationObserver !== 'undefined') {
+                  new MutationObserver(removePortal).observe(document.documentElement, {
+                    childList: true,
+                    subtree: true,
+                  });
+                }
+              })();
             `,
           }}
         />

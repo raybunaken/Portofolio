@@ -6,7 +6,9 @@ import React, {
   useImperativeHandle,
   forwardRef,
   useCallback,
+  useState,
 } from "react";
+import { Bold, Italic, Heading1, Heading2, Quote, Code } from "lucide-react";
 
 export interface VisualCanvasEditorRef {
   toggleHeading: (level: 1 | 2 | 3) => void;
@@ -26,6 +28,7 @@ interface VisualCanvasEditorProps {
   placeholder?: string;
   className?: string;
   minHeight?: string;
+  onActiveTagChange?: (tag: string) => void;
 }
 
 function escapeHtml(text: string): string {
@@ -298,12 +301,15 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
       placeholder = "Write your story here... Tap H1, H2, Quote, or type '# ' to format visually.",
       className = "",
       minHeight = "450px",
+      onActiveTagChange,
     },
     ref
   ) => {
     const editorRef = useRef<HTMLDivElement>(null);
     const isInternalUpdate = useRef(false);
     const lastEmittedValue = useRef(value);
+    const [bubblePos, setBubblePos] = useState<{ top: number; left: number } | null>(null);
+    const [activeTag, setActiveTag] = useState<string>("p");
 
     // Initial load and external value synchronization
     useEffect(() => {
@@ -335,18 +341,66 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
       onChange(md);
     }, [onChange]);
 
-    // Locate active top-level block inside editor
+    // Locate active top-level block inside editor safely
     const getActiveBlock = useCallback((): HTMLElement | null => {
       if (!editorRef.current) return null;
       const sel = window.getSelection();
       if (!sel || !sel.rangeCount) return null;
 
       let node: Node | null = sel.getRangeAt(0).startContainer;
-      while (node && node.parentNode !== editorRef.current) {
+      if (node === editorRef.current) {
+        return (editorRef.current.firstElementChild as HTMLElement) || null;
+      }
+      while (node && node.parentNode && node.parentNode !== editorRef.current) {
         node = node.parentNode;
       }
-      return node as HTMLElement | null;
+      if (node && node.parentNode === editorRef.current && node.nodeType === Node.ELEMENT_NODE) {
+        return node as HTMLElement;
+      }
+      return null;
     }, []);
+
+    // Update active tag detection for toolbar highlight and parent notify
+    const updateActiveTag = useCallback(() => {
+      const active = getActiveBlock();
+      const tag = active ? active.tagName.toLowerCase() : "p";
+      setActiveTag(tag);
+      if (onActiveTagChange) {
+        onActiveTagChange(tag);
+      }
+    }, [getActiveBlock, onActiveTagChange]);
+
+    // Update floating selection bubble position
+    const updateFloatingBubble = useCallback(() => {
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || !editorRef.current) {
+        setBubblePos(null);
+        return;
+      }
+
+      if (!editorRef.current.contains(sel.anchorNode)) {
+        setBubblePos(null);
+        return;
+      }
+
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const editorRect = editorRef.current.getBoundingClientRect();
+
+      if (rect.width > 0) {
+        setBubblePos({
+          top: Math.max(0, rect.top - editorRect.top - 48),
+          left: rect.left - editorRect.left + rect.width / 2,
+        });
+      } else {
+        setBubblePos(null);
+      }
+    }, []);
+
+    const handleSelectionChange = useCallback(() => {
+      updateActiveTag();
+      updateFloatingBubble();
+    }, [updateActiveTag, updateFloatingBubble]);
 
     // Set cursor to end of given element
     const moveCursorToEnd = (element: HTMLElement) => {
@@ -368,6 +422,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
         editorRef.current.appendChild(newEl);
         moveCursorToEnd(newEl);
         emitChange();
+        updateActiveTag();
         return;
       }
 
@@ -380,6 +435,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
       active.replaceWith(replacement);
       moveCursorToEnd(replacement);
       emitChange();
+      updateActiveTag();
     };
 
     // Imperative ref methods for toolbar actions
@@ -416,6 +472,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
         divider.after(nextP);
         moveCursorToEnd(nextP);
         emitChange();
+        updateActiveTag();
       },
       insertCodeBlock: (lang = "python") => {
         if (!editorRef.current) return;
@@ -445,6 +502,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           moveCursorToEnd(nextP);
         }
         emitChange();
+        updateActiveTag();
       },
       toggleBold: () => {
         document.execCommand("bold", false);
@@ -483,6 +541,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           active.replaceWith(h1);
           moveCursorToEnd(h1);
           emitChange();
+          updateActiveTag();
           return;
         }
 
@@ -494,6 +553,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           active.replaceWith(h2);
           moveCursorToEnd(h2);
           emitChange();
+          updateActiveTag();
           return;
         }
 
@@ -505,6 +565,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           active.replaceWith(h3);
           moveCursorToEnd(h3);
           emitChange();
+          updateActiveTag();
           return;
         }
 
@@ -516,6 +577,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           active.replaceWith(bq);
           moveCursorToEnd(bq);
           emitChange();
+          updateActiveTag();
           return;
         }
 
@@ -532,6 +594,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           divider.after(nextP);
           moveCursorToEnd(nextP);
           emitChange();
+          updateActiveTag();
           return;
         }
 
@@ -548,11 +611,13 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
           const codeEl = cardNode.querySelector("code");
           if (codeEl) moveCursorToEnd(codeEl);
           emitChange();
+          updateActiveTag();
           return;
         }
       }
 
       emitChange();
+      updateActiveTag();
     };
 
     // Keyboard behavior (Enter in H1/H2 creates paragraph, Backspace on divider deletes it)
@@ -571,6 +636,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
               active.after(nextP);
               moveCursorToEnd(nextP);
               emitChange();
+              updateActiveTag();
               return;
             }
           }
@@ -589,6 +655,7 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
             e.preventDefault();
             prev.remove();
             emitChange();
+            updateActiveTag();
             return;
           }
         }
@@ -597,12 +664,92 @@ const VisualCanvasEditor = forwardRef<VisualCanvasEditorRef, VisualCanvasEditorP
 
     return (
       <div className="relative w-full">
+        {/* Floating Mini-Toolbar on Selection (Medium / Notion Style) */}
+        {bubblePos && (
+          <div
+            style={{ top: bubblePos.top, left: bubblePos.left }}
+            className="absolute -translate-x-1/2 -top-12 z-40 flex items-center gap-0.5 px-2 py-1 rounded-xl bg-zinc-950 text-white shadow-2xl border border-zinc-800 transition-all select-none"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          >
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                document.execCommand("bold", false);
+                emitChange();
+              }}
+              className="p-1 hover:bg-zinc-800 rounded text-xs text-zinc-300 hover:text-white transition-colors"
+              title="Bold"
+            >
+              <Bold className="w-3.5 h-3.5" />
+            </button>
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                document.execCommand("italic", false);
+                emitChange();
+              }}
+              className="p-1 hover:bg-zinc-800 rounded text-xs text-zinc-300 hover:text-white transition-colors"
+              title="Italic"
+            >
+              <Italic className="w-3.5 h-3.5" />
+            </button>
+            <span className="w-px h-3.5 bg-zinc-800 mx-0.5" />
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                replaceBlockTag("h1");
+              }}
+              className={`px-1.5 py-0.5 rounded text-xs font-serif font-bold transition-colors ${
+                activeTag === "h1" ? "bg-zinc-800 text-white" : "text-zinc-300 hover:text-white hover:bg-zinc-800"
+              }`}
+              title="Heading 1"
+            >
+              H1
+            </button>
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                replaceBlockTag("h2");
+              }}
+              className={`px-1.5 py-0.5 rounded text-xs font-serif font-bold transition-colors ${
+                activeTag === "h2" ? "bg-zinc-800 text-white" : "text-zinc-300 hover:text-white hover:bg-zinc-800"
+              }`}
+              title="Heading 2"
+            >
+              H2
+            </button>
+            <span className="w-px h-3.5 bg-zinc-800 mx-0.5" />
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                replaceBlockTag("blockquote");
+              }}
+              className={`p-1 rounded text-xs transition-colors ${
+                activeTag === "blockquote" ? "bg-zinc-800 text-white" : "text-zinc-300 hover:text-white hover:bg-zinc-800"
+              }`}
+              title="Pull Quote"
+            >
+              <Quote className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        )}
+
         <div
           ref={editorRef}
           contentEditable
           suppressContentEditableWarning
           onInput={handleInput}
           onKeyDown={handleKeyDown}
+          onKeyUp={handleSelectionChange}
+          onMouseUp={handleSelectionChange}
           data-placeholder={placeholder}
           style={{ minHeight }}
           className={`visual-medium-canvas w-full outline-none focus:outline-none bg-transparent ${className}`}
